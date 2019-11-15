@@ -55,6 +55,8 @@ namespace Framework2
             Assert.IsTrue(signInPage.PageIsLoadedCorrectly());
         }
 
+        // ComplicatedPage tests
+
         [TestMethod]
         [Description("Check if can send form using submit form  on ComplicatedPage.")]
         public void TC6()
@@ -84,13 +86,15 @@ namespace Framework2
             Assert.IsTrue(complicated.SocialMediaBar.CheckIfUrlContainLinkedIn(), " OK.");
         }
 
+        // Drag and drop test
+
         [TestMethod]
         [Description("Check drag and drop")]
         public void TC9()
         {
             DragAndDropPage dragAndDrop = new DragAndDropPage(Driver);
             dragAndDrop.GotoUrl1();
-            Assert.AreEqual("Dropped!", dragAndDrop.DropElement1());
+            Assert.AreEqual("Dropped!", dragAndDrop.DropElementAndCheckMessage1());
         }
     }
 }
